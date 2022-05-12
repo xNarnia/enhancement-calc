@@ -215,7 +215,11 @@
                 else
                     table = NPCEnhancementTable;
 
-                var result = table[enhanceLevel].choose();
+                if(enhanceLevel <= 12)
+                    var result = table[enhanceLevel].choose();
+                else
+                    var result = table[12].choose();
+
                 switch(result){
                     case "Success":
                         if(enhanceLevel > 7)
@@ -260,11 +264,17 @@
                 else
                     $("#crystalEnhance").prop("disabled", true);
 
-                $(".hp > .value").text(Math.round(basehp * enhanceMultiplier[enhanceLevel]));
-                $(".patk > .value").text(Math.round(basePatk * enhanceMultiplier[enhanceLevel]));
-                $(".matk > .value").text(Math.round(baseMatk * enhanceMultiplier[enhanceLevel]));
-                $(".pdef > .value").text(Math.round(basePdef * enhanceMultiplier[enhanceLevel]));
-                $(".mdef > .value").text(Math.round(baseMdef * enhanceMultiplier[enhanceLevel]));
+                var multiplier = 1.0;
+                if(enhanceLevel <= 13)
+                    multiplier = enhanceMultiplier[enhanceLevel];
+                else
+                    multiplier = enhanceMultiplier[13] + (enhanceLevel - 13) * .4;
+
+                $(".hp > .value").text(Math.round(basehp * multiplier));
+                $(".patk > .value").text(Math.round(basePatk * multiplier));
+                $(".matk > .value").text(Math.round(baseMatk * multiplier));
+                $(".pdef > .value").text(Math.round(basePdef * multiplier));
+                $(".mdef > .value").text(Math.round(baseMdef * multiplier));
 
                 if($(".result").hasClass("success"))
                     $(".result").removeClass("success");
@@ -538,18 +548,27 @@
             .count.normal,
             .count.special,
             .count.none {
-                height:1.5em;
-                width:4em;
+                position: relative;
+                top: .5em;
+
+                height:2.5em;
+                width:4.4em;
+                vertical-align: middle;
 
                 font-weight: 1000;
 
                 border-radius: .2em;
-                padding: 0 0 0 4.4em;
+                padding: 0 0 0 5.2em;
                 margin: .2em 0 .2em .4em;
 
                 background-size: contain;
                 background-repeat: no-repeat;
                 background-color: rgb(224, 224, 224);
+            }
+            .count > p {
+                margin: 0;
+                margin-top: -.10em;
+                font-size: 2em;
             }
             
             .count.none {
@@ -575,9 +594,9 @@
             }
 
             .enhance {
-                width:15em;
+                width:10em;
 
-                font-size: .8em;
+                font-size: 1em;
                 font-weight: 600;
 
                 border: 1px solid rgb(204, 204, 204);
@@ -595,9 +614,14 @@
                 background-color: rgb(160, 160, 160);
             }
             
-            @media (max-width : 732px) {
+            @media (max-width : 762px) {
                 body {
-                    font-size: 11pt !important;
+                    font-size: 16pt !important;
+                }
+
+                .result {
+                    height:3em;
+                    width:12em;
                 }
 
                 .item{
@@ -605,12 +629,7 @@
                 }
 
                 .item > .label{
-                    font-size: 1.6em;
-                }
-
-                .enhance {
-                    font-size: 1.1em;
-                    width: 11em;
+                    font-size: 1.2em;
                 }
 
                 .checkButton {
@@ -619,18 +638,6 @@
                 }
                 .checkButton > label {
                     padding: 0 0;
-                }
-
-                .count.normal,
-                .count.special,
-                .count.none{
-                    position: relative;
-                    top: .5em;
-
-                    width:1.9em;
-                    padding: 0 0 0 2em;
-
-                    font-size: 2em;
                 }
             }
         </style>
@@ -716,18 +723,18 @@
                 </div>
                 <div class="enhanceOptions">
                     <div class="option stone">
-                        <div class="count normal">&infin;</div>
+                        <div class="count normal"><p>&infin;</p></div>
                         <div class="count none"></div>
                         <button id="normalEnhance" class="enhance group light">Normal Enhancement</button>
                     </div>
                     <div class="option ore">
-                        <div class="count normal">&infin;</div>
-                        <div class="count special">&infin;</div>
+                        <div class="count normal"><p>&infin;</p></div>
+                        <div class="count special"><p>&infin;</p></div>
                         <button id="oreEnhance" class="enhance group light">Protected Enhancement</button>
                     </div>
                     <div class="option crystal">
-                        <div class="count normal">&infin;</div>
-                        <div class="count special">&infin;</div>
+                        <div class="count normal"><p>&infin;</p></div>
+                        <div class="count special"><p>&infin;</p></div>
                         <button id="crystalEnhance" class="enhance group light">Special Enhancement</button>
                     </div>
                 </div>
