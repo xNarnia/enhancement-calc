@@ -1,5 +1,7 @@
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=.5, maximum-scale=.5, user-scalable=no" />
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         
         <script type = "text/javascript">
@@ -349,6 +351,7 @@
                 text-align: center;
                 background-image: url("https://cdn.discordapp.com/attachments/698369130155212880/974172253082247228/unknown.png");
             }
+            
 
             h1, .devnote {
                 color:white;
@@ -591,6 +594,45 @@
             .enhance:disabled {
                 background-color: rgb(160, 160, 160);
             }
+            
+            @media (max-width : 560px) {
+                body {
+                    font-size: 11pt !important;
+                }
+
+                .item{
+                    height:4em;
+                }
+
+                .item > .label{
+                    font-size: 1.6em;
+                }
+
+                .enhance {
+                    font-size: 1.1em;
+                    width: 11em;
+                }
+
+                .checkButton {
+                    width:8.8em;
+                    font-size: 1.2em;
+                }
+                .checkButton > label {
+                    padding: 0 0;
+                }
+
+                .count.normal,
+                .count.special,
+                .count.none{
+                    position: relative;
+                    top: .5em;
+
+                    width:1.9em;
+                    padding: 0 0 0 2em;
+
+                    font-size: 2em;
+                }
+            }
         </style>
     </head>
     <body>
@@ -692,7 +734,7 @@
             </div>
         </div>
         <div class="devnote">
-            Made with love by Narnia#7777 💖
+            Made with love by Narnia#7777 &#128150;
         </div>
     </body>
 </html>
