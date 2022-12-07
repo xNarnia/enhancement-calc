@@ -1,4 +1,4 @@
-# enhancement-calc
+# Elsword Enhancement Simulator
 An enhancement simulator based on Elsword's using rates from Elwiki on 5-12-2022
 
 This is a GitHub.io page!
