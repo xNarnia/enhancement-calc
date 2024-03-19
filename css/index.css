@@ -265,6 +265,20 @@ input[type="checkbox"]:checked + label:before {
     background-color: rgb(160, 160, 160);
 }
 
+.socialMedia {
+    display:inline-block;
+    border-radius: 10%;
+
+    padding: .5em .3em .2em .3em;
+
+    background-color: rgba(0, 0, 0, .75);
+}
+
+.socialMedia img {
+    height:2.5em;
+    margin: 0 .2em
+}
+
 @media (max-height : 1120px ) {
     body {
         font-size: 13pt !important;
