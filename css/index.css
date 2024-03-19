@@ -1,0 +1,309 @@
+* {
+    touch-action: manipulation;
+}
+
+body {
+    font-size: 16pt;
+    font-family: Arial;
+    text-align: center;
+    background-image: url("../img/background.png");
+}
+
+
+h1, .devnote {
+    color:white;
+    text-shadow: .1em .1em .2em #000;
+}
+
+.container {
+    width:33em;
+    padding: .6em;
+
+    border-radius: 1em;
+
+    display:inline-block;
+    text-align: left;
+
+    background-color: white;
+}
+
+.group {
+    background-color: #a3a3a388;
+    padding:.6em;
+    border-radius: .6em;
+    box-shadow: inset 0 0 .3em #555;
+}
+
+.group.light,
+.enhanceOptions {
+    background-color: white;
+    box-shadow: inset 0 0 .4em rgb(187, 205, 255);
+    border-radius: .6em;
+}
+
+.divider {
+    margin: .8em 0;
+}
+
+.item div,
+.enhanceItem.group > .row div {
+    display: inline-block;
+    vertical-align: middle;
+}
+.item > .icon {
+    height:4em;
+    width:4em;
+    background-image: url("../img/berauks_mustache.png");
+    background-size: cover;
+}
+
+.result {
+    height:3.5em;
+    width:14em;
+    margin-left: 1em;
+    background-size: cover;
+}
+
+#forceButtons, #resetClicks {
+    margin-top: .4em;
+}
+
+.success {
+    background-image: url("../img/Success.png");
+}
+
+.nochange {
+    background-image: url("../img/Nochange.png");
+}
+
+.downgrade {
+    background-image: url("../img/Downgrade.png");
+}
+
+.reset {
+    background-image: url("../img/Reset.png");
+}
+
+.row.elhammer > .icon {
+    height:2em;
+    width:2em;
+    background-image: url("../img/Els_Hammer.png");
+    background-size: cover;
+}
+
+.row.restorationScroll > .icon {
+    height:2em;
+    width:2em;
+    background-image: url("../img/Blessed_Restoration_Scroll.png");
+    background-size: cover;
+}
+
+.enhanceItem > .row {
+    margin: 0 0 .4em 0;
+}
+
+.enhanceItem > .row > .note {
+    font-size: .7em;
+
+    padding: 0 1.5em;
+    margin: .1em 0;
+
+    background-image: url("../img/Exclamation.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.enhanceItem > .row > .label {
+    width:14em;
+}
+
+.enhanceItem > .row > .count {
+    width:1.4em;
+    padding: 0 .2em;
+
+    font-size: 1.4em;
+    text-align: right;
+
+    background-color: #a3a3a388;
+    border-radius: .2em;
+}
+
+.labels > .row > div {
+    display:inline-block;
+}
+
+.labels > .label,
+.labels > .row > .label {
+    width: 18em;
+    font-weight: 600;
+}
+            
+/*Checkboxes styles*/
+.checkButton
+ {
+    width:11em;
+    padding: .4em 0;
+    margin: 0 0 0 .6em;
+
+    background-color: rgb(190,190,190);;
+    background-image: linear-gradient(180deg, rgb(212, 212, 212) 0%, rgb(185, 185, 185) 100%);
+
+    border:1px solid rgb(114, 114, 114);
+    border-radius: .2em;
+
+    box-shadow: inset 0 0 .3em #FFF;
+}
+
+input[type="checkbox"] { display: none; }
+
+input[type="checkbox"] + label {
+    display: block;
+    position: relative;
+    padding: 0 55px;
+    text-align: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+input[type="checkbox"] + label:last-child { margin-bottom: 0; }
+
+input[type="checkbox"] + label:before {
+    content: '';
+    display: block;
+    width: 3em;
+    height: 2em;
+    background-image: url("../img/uncheck.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    top: -.5em;
+    -webkit-transition: all .06s;
+    transition: all .06s;
+}
+
+input[type="checkbox"]:checked + label:before {
+    background-image: url("../img/check.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.enhanceOptions {
+    padding: .4em;
+    margin-top: .4em;
+}
+
+.count.normal,
+.count.special,
+.count.none {
+    position: relative;
+    top: .5em;
+
+    height:2.5em;
+    width:4.4em;
+    vertical-align: middle;
+
+    font-weight: 1000;
+
+    border-radius: .2em;
+    padding: 0 0 0 5.2em;
+    margin: .2em 0 .2em .4em;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: rgb(224, 224, 224);
+}
+.count > p {
+    margin: 0;
+    margin-top: -.10em;
+    font-size: 2em;
+}
+
+.count.none {
+    height:0;
+    background-color: #00000000;
+}
+
+.count.normal {
+    background-image: url("../img/Blessed_Enhacment_Stone.png");
+}
+
+.option.ore > .count.special {
+    background-image: url("../img/Blessed_Fluorite_Ore.png");
+}
+
+.option.crystal > .count.special {
+    background-image: url("../img/Blessed_Fluorite_Crystal.png");
+}
+
+.option > * {
+    margin: .2em 0;
+    display:inline-block;
+}
+
+.enhance {
+    width:10em;
+
+    font-size: 1em;
+    font-weight: 600;
+
+    border: 1px solid rgb(204, 204, 204);
+}
+
+.enhance:hover {
+    background-color: rgb(245, 248, 255);
+}
+
+.enhance:active {
+    background-color: rgb(235, 241, 255);
+}
+
+.enhance:disabled {
+    background-color: rgb(160, 160, 160);
+}
+
+@media (max-height : 1120px ) {
+    body {
+        font-size: 13pt !important;
+    }
+}
+
+@media (max-height : 820px ) {
+    body {
+        font-size: 11pt !important;
+    }
+}
+
+@media (max-width : 732px) {
+    body {
+        font-size: 14pt !important;
+    }
+
+    .result {
+        height:3em;
+        width:12em;
+    }
+    
+    #forceButtons, #resetClicks {
+        margin-top: .4em;
+    }
+
+    .item{
+        height:6.75em;
+    }
+
+    .item > .label{
+        font-size: 1.2em;
+    }
+
+    .checkButton {
+        width:8.8em;
+        font-size: 1.2em;
+    }
+    .checkButton > label {
+        padding: 0 0;
+    }
+}
