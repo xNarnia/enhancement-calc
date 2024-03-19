@@ -58,7 +58,7 @@ h1, .devnote {
 }
 
 .result {
-    height:3.5em;
+    height:4em;
     width:14em;
     margin-left: 1em;
     background-size: cover;
@@ -283,7 +283,7 @@ input[type="checkbox"]:checked + label:before {
     }
 
     .result {
-        height:3em;
+        height:3.5em;
         width:12em;
     }
     
