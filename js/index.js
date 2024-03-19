@@ -117,7 +117,7 @@ var stonesUsed = 0;
 var oresUsed = 0;
 var crystalsUsed = 0;
 
-function updateStatLabels(){
+function updateClickLabels(){
     $(".enhanceLvl").text(enhanceLevel);
     $(".row.brokenCount > .value").text(brokenCount);
     $(".row.stonesUsed > .value").text(stonesUsed);
@@ -169,12 +169,8 @@ function enhance(protected, result = "") {
             break;
     }
 
-    // Update labels
-    $(".enhanceLvl").text(enhanceLevel);
-    $(".row.brokenCount > .value").text(brokenCount);
-    $(".row.stonesUsed > .value").text(stonesUsed);
-    $(".row.oresUsed > .value").text(oresUsed);
-    $(".row.crystalsUsed > .value").text(crystalsUsed);
+    // Update click counter labels
+    updateClickLabels();
 
     // Set button states based on Enhancement Level
     if(enhanceLevel < 11)
@@ -194,7 +190,11 @@ function enhance(protected, result = "") {
         multiplier = enhanceMultiplier[13] + (enhanceLevel - 13) * .4;
 
     // Update stat labels with updated enhancement % modifier 
-    updateStatLabels();
+    $(".hp > .value").text(Math.round(basehp * multiplier));
+    $(".patk > .value").text(Math.round(basePatk * multiplier));
+    $(".matk > .value").text(Math.round(baseMatk * multiplier));
+    $(".pdef > .value").text(Math.round(basePdef * multiplier));
+    $(".mdef > .value").text(Math.round(baseMdef * multiplier));
 
     // Remove any enhancement state images
     // Use "hasClass" to ensure image is on page before using removeClass (faster to do this than to just remove outright)
@@ -258,7 +258,7 @@ $(document).ready(function() {
         stonesUsed = 0;
         oresUsed = 0;
         crystalsUsed = 0;
-        updateStatLabels();
+        updateClickLabels();
     });
     // Enhance Buttons
     $("#normalEnhance").click(function() {
