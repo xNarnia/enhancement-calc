@@ -242,14 +242,20 @@ $(document).ready(function() {
 
     // Force Enhance Buttons
     $("#enhanceReset").click(function() {
+        $(".red-bubble").addClass("hidden");
         enhance(false, "Reset");
     });
     $("#forceUpgrade").click(function() {
+        if($(".red-bubble").hasClass("hidden")){
+            $(".red-bubble").removeClass("hidden");
+        }
+        
         enhance(false, "Success");
     });
     $("#forceDowngrade").click(function() {
-        if(enhanceLevel <= 0)
+        if(enhanceLevel <= 0) {
             return;
+        }
 
         enhance(false, "Downgrade");
     });

@@ -56,6 +56,35 @@ h1, .devnote {
     background-image: url("../img/berauks_mustache.png");
     background-size: cover;
 }
+.red-bubble {
+    height:1em;
+    width:1em;
+    margin: -.2em 0 0 -.2em;
+
+    background-color: #f00;
+    border-radius: 100%;
+    
+    box-shadow: 0 0 .3em #000;
+}
+.hidden {
+    visibility: hidden;
+}
+.tooltip {
+    position: absolute;
+    margin-top: -3em;
+    padding: .5em;
+    background-color: #fff;
+    border-radius: .5em;
+    border: #fff .25em solid;
+
+    opacity: 0;
+    transition: opacity 0.3s;
+    visibility: hidden;
+}
+.red-bubble:hover + .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
 
 .result {
     height:4em;
